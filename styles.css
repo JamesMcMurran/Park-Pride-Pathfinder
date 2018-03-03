@@ -1,0 +1,40 @@
+/* @override Bootstrap's margin and padding */
+.container-fluid {
+  margin: 0;
+  padding: 0;
+}
+
+#search-bar {
+  position: fixed;
+  top: 0;
+  margin: 0;
+  padding: 0;
+  height: 60px;
+  width: 100%;
+  background: white;
+  text-align: center;
+  border-bottom: 1px solid black;
+  box-shadow: 0 1px 2px darkgray;
+}
+
+#map {
+  margin-top: 60px;
+}
+
+.park-item {
+  margin: 20px;
+}
+
+  .park-item > * {
+    margin-left: 10px;
+    margin-top: 10px;
+  }
+
+  .park-item h4 {
+    font-size: 26px;
+  }
+
+  .park-item p {
+    color: darkgray;
+    font-size: 18px;
+  }
