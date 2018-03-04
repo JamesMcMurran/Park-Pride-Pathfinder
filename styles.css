@@ -1,55 +1,25 @@
 /* @override Bootstrap's margin and padding */
-.container-fluid {
-  margin: 0;
-  padding: 0;
+html,
+body, 
+h2 {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
 }
 
-#search-bar {
-  position: fixed;
-  top: 0;
-  margin: 0;
-  padding: 0;
-  height: 60px;
-  width: 100%;
-  background: white;
-  text-align: center;
-  border-bottom: 1px solid black;
-  box-shadow: 0 1px 2px darkgray;
+.search-form{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-top: 15px;
+	padding: 0 155px 0 150px;
 }
 
-#map {
-  margin-top: 60px;
+div[id="map"]{
+	margin: 0 auto;
+	margin-top: 20px;
+	background-color: red;
+	border: solid 1px black;
+	height: 500px;
+	width: 80%;
 }
-
-.park-item {
-  margin: 20px;
-}
-
-  .park-item > * {
-    margin-left: 10px;
-    margin-top: 10px;
-  }
-
-  .park-item h4 {
-    font-size: 26px;
-  }
-
-  .park-item p {
-    color: darkgray;
-    font-size: 18px;
-  }
-
-#park-filters {
-  text-align: center;
-  font-size: 24px;
-  margin: 20px;
-}
-
-  #park-filters > span {
-    font-size: 18px;
-    color: grey;
-  }
-
-  #park-filters input {
-    margin: auto 10px;
-  }
