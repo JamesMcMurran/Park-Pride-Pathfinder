@@ -23,3 +23,20 @@ div[id="map"]{
 	height: 500px;
 	width: 80%;
 }
+.park-item {
+  margin: 20px;
+}
+
+.park-item > * {
+  margin-left: 10px;
+  margin-top: 10px;
+}
+
+.park-item h4 {
+  font-size: 26px;
+}
+
+.park-item p {
+  color: darkgray;
+  font-size: 18px;
+}
