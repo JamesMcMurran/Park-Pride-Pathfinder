@@ -26,38 +26,22 @@
   <script type="text/javascript" src="scripts.js"></script>
 </head>
 <body>
-  <div class="container-fluid">
-    <div id="search-bar">
-      <input type="text" name ="search-parks" placeholder="Search Parks">
-    </div>
-
-    <div id="map" class="borders">
-      <img src="img-placeholders/map-placeholder.png" class="center img-fluid" width="100%" height="auto" alt="Placeholder Map">
-    </div>
-
-    <!-- Park Filters -->
-    <div id="park-filters">
-      <span>Filter by: </span>
-      <div class="form-check form-check-inline big-checkboxes">
-        <label class="form-check-label">
-          <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1"> Tennis
-        </label>
-      </div>
-      <div class="form-check form-check-inline">
-        <label class="form-check-label">
-          <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2"> Hiking
-        </label>
-      </div>
-      <div class="form-check form-check-inline">
-        <label class="form-check-label">
-          <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3"> Biking
-        </label>
-      </div>
-    </div>
-
-    <div id="park-information-body">
-      <!-- To be populated from scripts.js -->
-    </div>
-  </div>
+  <section class="search-form">
+		<h2 class="title">Park Finder</h2>
+		<form action="#" >
+			<input id="search-bar" type="text" name="search">
+			<button type="submit" name="submit">search</button>
+		</form>
+	</section>
+	<main>
+    <!--Geolocation map-->
+		<div id="map">  </div>
+    
+    <!--List of parks-->
+		<div id="park-information-body">  </div>
+	</main>
+	<footer>
+		<div id="copyright">Copyright &copy; 2018, ParkFinder</div> 
+	</footer>
 </body>
 </html>
