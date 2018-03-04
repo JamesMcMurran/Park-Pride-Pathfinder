@@ -13,7 +13,7 @@ $.getJSON("json/parks-no_geo.json", function(response) {
 });
 
 function appendParkItemsToBody(parksJson) {
-  for(var i = 0; i < 50; i++){
+  for(var i = 0; i < 10; i++){
     var parkHtmlItem=
     `
     <div class="media park-item">
@@ -24,6 +24,9 @@ function appendParkItemsToBody(parksJson) {
         </div>
         <div class="media-body">
           <h4 class="media-heading">${parksJson.parks[i].NAME}</h4>
+          <i class="fas fa-table-tennis"></i>
+          <i class="fab fa-envira"></i>
+          <i class="fas fa-bicycle"></i>
           <p>${parksJson.parks[i].ADDRESS}</p>
         </div>
       </div>

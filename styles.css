@@ -38,3 +38,18 @@
     color: darkgray;
     font-size: 18px;
   }
+
+#park-filters {
+  text-align: center;
+  font-size: 24px;
+  margin: 20px;
+}
+
+  #park-filters > span {
+    font-size: 18px;
+    color: grey;
+  }
+
+  #park-filters input {
+    margin: auto 10px;
+  }

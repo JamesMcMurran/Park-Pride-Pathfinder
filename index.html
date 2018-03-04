@@ -13,10 +13,12 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
-
   <!-- google maps -->
   <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCtqWrXYroKEJA-TxgqRjLZzGsTa4bsRLk&callback=getWhere&libraries=geometry,places"
   async defer></script> -->
+
+  <!--Font Awesome -->
+  <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
 
   <link rel="stylesheet" type="text/css" href="styles.css">
   <!-- &callback=findPlaces -->
@@ -25,12 +27,32 @@
 </head>
 <body>
   <div class="container-fluid">
-    <div class="" id="search-bar">
+    <div id="search-bar">
       <input type="text" name ="search-parks" placeholder="Search Parks">
     </div>
 
-    <div id="map">
+    <div id="map" class="borders">
       <img src="img-placeholders/map-placeholder.png" class="center img-fluid" width="100%" height="auto" alt="Placeholder Map">
+    </div>
+
+    <!-- Park Filters -->
+    <div id="park-filters">
+      <span>Filter by: </span>
+      <div class="form-check form-check-inline big-checkboxes">
+        <label class="form-check-label">
+          <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1"> Tennis
+        </label>
+      </div>
+      <div class="form-check form-check-inline">
+        <label class="form-check-label">
+          <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2"> Hiking
+        </label>
+      </div>
+      <div class="form-check form-check-inline">
+        <label class="form-check-label">
+          <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3"> Biking
+        </label>
+      </div>
     </div>
 
     <div id="park-information-body">
