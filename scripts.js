@@ -43,8 +43,8 @@ function initMap(location) {
       var longitudes = data.parks[i].long
       var latitudes = data.parks[i].Lat
       var name = data.parks[i].NAME
-      console.log(longitudes)
-      console.log(latitudes)
+      // console.log(longitudes)
+      // console.log(latitudes)
       var longlat = {lat: parseFloat(latitudes), lng: parseFloat(longitudes)};
       // items.push(longlat)
      var image = 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png';
@@ -59,9 +59,9 @@ function initMap(location) {
     }
 
 
-console.log(longlat.lat[0])
-console.log(longlat.lng[0])
+// console.log(longlat.lat[0])
+// console.log(longlat.lng[0])
 parklocations = {lat: parseFloat(longlat.lat[0]), lng: parseFloat(longlat.lng[0])}
-console.log(parklocations)
+// console.log(parklocations)
 });
 }

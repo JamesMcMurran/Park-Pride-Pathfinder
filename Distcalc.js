@@ -29,5 +29,4 @@ function sortObjByDistance(Obj,lat,long) {
     return tempObj;
 }
 
-console.log(sortObjByDistance(test.parks,33.6746282, -84.4970713));
-
+// console.log(sortObjByDistance(test.parks,33.6746282, -84.4970713));
