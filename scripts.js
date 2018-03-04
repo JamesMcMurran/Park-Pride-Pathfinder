@@ -3,16 +3,12 @@ var map;
 var infowindow;
 var restArray = [];
 var sorted;
-<<<<<<< HEAD
 var defaultlocation = {lat: 33.7831032, lng: -84.3767911};
                       
 
 var items = [];
 
 var locations;
-=======
-var defaultlocation = {lat: 33.7831032, lng: -84.3767911}
->>>>>>> 54846a5c70a24703390868c6cb1887f978589652
 
 function getWhere(){
       navigator.geolocation.getCurrentPosition(function(position) {
