@@ -1,7 +1,6 @@
 var localDataUrl = "json/parks_geo.json";
-var remoteDataUrl = "http://officeassassins.com/parks_geo.json";
 
-$.getJSON(remoteDataUrl, function(response) {
+$.getJSON(localDataUrl, function(response) {
   var sortedParks = sortObjByDistance(response.parks, defaultlocation.lat, defaultlocation.lng);
   appendParkItemsToBody(sortedParks);
 });
