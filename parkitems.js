@@ -1,4 +1,4 @@
-var localDataUrl = "json/parks_geo.json";
+var localDataUrl = "/json/parks_geo.json";
 
 $.getJSON(localDataUrl, function(response) {
   var sortedParks = sortObjByDistance(response.parks, defaultlocation.lat, defaultlocation.lng);

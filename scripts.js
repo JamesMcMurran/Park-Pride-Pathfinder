@@ -16,7 +16,7 @@ function getWhere(){
         var thisLocation = { lat: position.coords.latitude, lng: position.coords.longitude };
         initMap(thisLocation);
         globalThisLocation.push(thisLocation);
-      },);
+      });
 }
 
 function initMap(location) {
@@ -33,7 +33,7 @@ function initMap(location) {
   
 
 
-  $.getJSON( "http://officeassassins.com/parks_geo.json", function(data) {
+  $.getJSON( "/json/parks_geo.json", function(data) {
   
   // console.log(data);
 
