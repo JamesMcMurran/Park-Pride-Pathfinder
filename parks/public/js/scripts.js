@@ -1,0 +1,54 @@
+var globalThisLocation = [];
+var map;
+var infowindow;
+var restArray = [];
+var sorted;
+var defaultlocation = {lat: 33.7831032, lng: -84.3767911};
+                      
+
+var items = [];
+
+var locations;
+
+function getWhere(){
+      navigator.geolocation.getCurrentPosition(function(position) {
+        console.log(`lat: ${position.coords.latitude} lng: ${position.coords.longitude}`);
+        var thisLocation = { lat: position.coords.latitude, lng: position.coords.longitude };
+        initMap(thisLocation);
+        globalThisLocation.push(thisLocation);
+      });
+}
+
+function initMap(location) {
+  
+  map = new google.maps.Map(document.getElementById('map'), {
+    center: location,
+    zoom: 14
+  });
+  var marker = new google.maps.Marker({
+    position: location,
+    map: map,
+    title: 'Hello World!'
+  });
+  
+
+
+  $.getJSON( "/json/parks_geo.json", function(data) {
+    for( i = 0; i < 350; i++){
+      var longitudes = data.parks[i].long
+      var latitudes = data.parks[i].Lat
+      var name = data.parks[i].NAME
+      var longlat = {lat: parseFloat(latitudes), lng: parseFloat(longitudes)};
+      var image = 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png';
+      var parkMarker = new google.maps.Marker({
+        position: longlat,
+        map: map,
+        icon: image,
+        title: name
+
+      });
+    }
+      parklocations = {
+      lat: parseFloat(longlat.lat[0]), lng: parseFloat(longlat.lng[0])}
+  });
+}

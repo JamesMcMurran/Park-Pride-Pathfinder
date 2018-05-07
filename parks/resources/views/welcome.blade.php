@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ParkFinder</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+
+    <!-- jQuery  -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+    <!-- google maps -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCtqWrXYroKEJA-TxgqRjLZzGsTa4bsRLk&callback=getWhere&libraries=geometry,places"
+            async defer></script>
+
+    <!--Font Awesome -->
+    <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <!-- &callback=findPlaces -->
+    <!-- custom JS -->
+    <script type="text/javascript" src="js/scripts.js"></script>
+    <script type="text/javascript" src="js/Distcalc.js"></script>
+    <script type="text/javascript" src="js/parkitems.js"></script>
+</head>
+<body>
+<div class="flex-center position-ref full-height">
+    @if (Route::has('login'))
+        <div class="top-right links">
+            @auth
+
+            <a href="{{ url('/home') }}">Home</a>
+            @else
+                <a style="float: right" class="btn btn-primary" href="{{ route('login') }}">Login</a>
+                <a style="float: right" class="btn btn-primary" href="{{ route('register') }}">Register</a>
+                @endauth
+        </div>
+    @endif
+
+
+</div>
+<div class="container-fluid">
+    <section class="search-form">
+
+        <!-- Can't figure how to format this so the img is stuck in header for now -->
+        <h2 class="title"><img src="img-placeholders/logo.svg" width=50 height=50 alt="Park Pride Logo">Park Finder</h2>
+        <form action="#" >
+            <input id="search-bar" type="text" name="search">
+            <button type="submit" name="submit">search</button>
+        </form>
+    </section>
+    <main>
+        <div id="map">
+            <!-- <img src="img-placeholders/map-placeholder.png" class="img-fluid" width="100%" height="auto" alt="Placeholder Map"> -->
+        </div>
+
+        <!-- Park Filters -->
+        <div id="park-filters">
+            <hr>
+            <span>Filter by: </span>
+            <div class="form-check form-check-inline big-checkboxes">
+                <label class="form-check-label">
+                    <input class="form-check-input" type="checkbox" id="tennis-checkbox" value="tennis"> Tennis
+                </label>
+            </div>
+            <div class="form-check form-check-inline">
+                <label class="form-check-label">
+                    <input class="form-check-input" type="checkbox" id="trails-checkbox" value="trails"> Trails
+                </label>
+            </div>
+            <div class="form-check form-check-inline">
+                <label class="form-check-label">
+                    <input class="form-check-input" type="checkbox" id="volleyball-checkbox" value="volleyball"> Volleyball
+                </label>
+            </div>
+        </div>
+
+        <div id="park-information-body">
+            <!-- To be populated from scripts.js -->
+        </div>
+
+        <div id="report-problem">
+            <a href="mailto:parkscustomerservice@atlantaga.gov?Subject=Inaccurate%20information%20on%20ParkFinder%20app" target="_top">Report a Problem</a>
+        </div>
+    </main>
+    <footer>
+        <div id="copyright">Copyright &copy; 2018, ParkFinder</div>
+    </footer>
+
+</div>
+</body>
+</html>
