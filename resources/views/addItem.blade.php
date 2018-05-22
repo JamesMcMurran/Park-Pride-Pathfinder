@@ -2,7 +2,7 @@
 
 @section('content')
 <script>
-    var x = document.getElementById("demo");
+    var x = document.getElementById("geo");
 
     function getLocation() {
         if (navigator.geolocation) {
@@ -13,10 +13,10 @@
     }
 
     function showPosition(position) {
-        x.value = "Latitude: " + position.coords.latitude +
-            "Longitude: " + position.coords.longitude;
-        console.log("Latitude: " + position.coords.latitude +
-            "Longitude: " + position.coords.longitude);
+        var x = document.getElementById("geo");
+        y = "Lat: " + position.coords.latitude +" Long: " + position.coords.longitude;
+        x.value = y
+        console.log(y);
     }
 </script>
 
@@ -28,7 +28,7 @@
                 <div class="card-header">{{ __('Register') }}</div>
 
                 <div class="card-body">
-                    <form method="POST" action="{{ route('add_new_item') }}">
+                    <form method="POST" action="">
                         @csrf
 
                         <div class="form-group row">
@@ -60,7 +60,7 @@
                             <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Name') }}</label>
 
                             <div class="col-md-6">
-                                <input id="name" type="text" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="name" value="{{ old('name') }}" required autofocus>
+                                <input id="name" type="text" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="name" value="{{ old('name') }}"  autofocus>
 
                                 @if ($errors->has('name'))
                                     <span class="invalid-feedback">
@@ -74,7 +74,9 @@
                             <label for="description" class="col-md-4 col-form-label text-md-right">{{ __('Description') }}</label>
 
                             <div class="col-md-6">
-                                <input id="description" type="description" class="form-control{{ $errors->has('description') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required>
+                                <textarea  id="description" type="description" class="form-control{{ $errors->has('description') ? ' is-invalid' : '' }}" name="description" value="{{ old('description') }}">
+
+                                </textarea>
 
                                 @if ($errors->has('description'))
                                     <span class="invalid-feedback">
@@ -88,13 +90,13 @@
                         <div class="form-group row">
                             <label for="geo" class="col-md-4 col-form-label text-md-right">{{ __('Geo') }}</label>
 
-                            <div class="col-md-6">
+                            <div  class="col-md-6">
 
                                 <p>Click the button to get your coordinates.</p>
 
-                                <button onclick="getLocation()">Get my location</button>
+                                <button type="button" onclick="getLocation()">Get my location</button>
 
-                                <input id="geo" type="text" required>
+                                <input id="geo" type="text" >
                             </div>
                         </div>
 
