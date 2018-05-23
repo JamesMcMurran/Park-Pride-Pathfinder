@@ -13,12 +13,12 @@ class CreateAmenitiesPicturesTable extends Migration
      */
     public function up()
     {
-        Schema::create('amenitie_picture', function (Blueprint $table) {
+        Schema::create('amenities_pictures', function (Blueprint $table) {
             $table->increments('id');
-	        $table->integer('amenitie_id');
-	        $table->foreign('amenitie_id')->references('id')->on('amenitie');
+	        $table->integer('amenities_id');
+	        //$table->foreign('amenities_id')->references('id')->on('amenities');
 	        $table->integer('picture_id');
-	        $table->foreign('picture_id')->references('id')->on('pictures');
+	       // $table->foreign('picture_id')->references('id')->on('pictures');
             $table->timestamps();
         });
     }
@@ -30,6 +30,6 @@ class CreateAmenitiesPicturesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('amenitie_picture');
+	    Schema::dropIfExists('amenities_pictures');
     }
 }

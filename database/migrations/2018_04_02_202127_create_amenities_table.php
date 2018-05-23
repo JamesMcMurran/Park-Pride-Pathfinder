@@ -14,7 +14,7 @@ class CreateAmenitiesTable extends Migration
     public function up()
     {
         Schema::create('amenities', function (Blueprint $table) {
-            $table->increments('id');
+            $table->increments('id',true);
 	        $table->longText('description');
 	        $table->string('name', 255);
 	        $table->string('type', 100);

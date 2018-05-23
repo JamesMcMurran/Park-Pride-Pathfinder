@@ -14,7 +14,7 @@ class CreateTrailsTable extends Migration
     public function up()
     {
         Schema::create('trails', function (Blueprint $table) {
-            $table->increments('id');
+            $table->increments('id',true);
 	        $table->string('type', 100);
 	        $table->string('difficulty', 100);
 	        $table->longText('description');
