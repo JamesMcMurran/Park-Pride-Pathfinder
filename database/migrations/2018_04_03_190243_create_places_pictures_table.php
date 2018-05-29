@@ -15,9 +15,9 @@ class CreatePlacesPicturesTable extends Migration
     {
         Schema::create('places_pictures', function (Blueprint $table) {
             $table->increments('id');
-	        $table->integer('places_id');
+	        $table->integer('places_id')->unsigned();
 	        //$table->foreign('place_id')->references('id')->on('places');
-	        $table->integer('pictures_id');
+	        $table->integer('pictures_id')->unsigned();
 	        //$table->foreign('picture_id')->references('id')->on('pictures');
             $table->timestamps();
         });

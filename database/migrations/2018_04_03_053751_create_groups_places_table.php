@@ -13,12 +13,10 @@ class CreateGroupsPlacesTable extends Migration
      */
     public function up()
     {
-        Schema::create('group_place', function (Blueprint $table) {
+        Schema::create('groups_places', function (Blueprint $table) {
             $table->increments('id',true);
-	        $table->integer('group_id');
-	        $table->integer('place_id');
-	        //$table->foreign('group_id')->references('id')->on('groups');
-	        //$table->foreign('place_id')->references('id')->on('parks');
+	        $table->integer('group_id')->unsigned();
+	        $table->integer('place_id')->unsigned();
             $table->timestamps();
         });
     }

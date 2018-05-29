@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateAmenitiesPicturesTable extends Migration
+class CreateFeaturesPicturesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,11 @@ class CreateAmenitiesPicturesTable extends Migration
      */
     public function up()
     {
-        Schema::create('amenities_pictures', function (Blueprint $table) {
+        Schema::create('features_pictures', function (Blueprint $table) {
             $table->increments('id');
-	        $table->integer('amenities_id');
+	        $table->integer('feature_id')->unsigned();
 	        //$table->foreign('amenities_id')->references('id')->on('amenities');
-	        $table->integer('picture_id');
+	        $table->integer('picture_id')->unsigned();
 	       // $table->foreign('picture_id')->references('id')->on('pictures');
             $table->timestamps();
         });
@@ -30,6 +30,6 @@ class CreateAmenitiesPicturesTable extends Migration
      */
     public function down()
     {
-	    Schema::dropIfExists('amenities_pictures');
+	    Schema::dropIfExists('features_pictures');
     }
 }

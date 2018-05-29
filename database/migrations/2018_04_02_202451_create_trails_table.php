@@ -25,6 +25,7 @@ class CreateTrailsTable extends Migration
 	        $table->string('walking', 1);
 	        $table->string('running', 1);
 	        $table->string('strollers', 1);
+	        $table->polygon('poly');
             $table->timestamps();
         });
     }

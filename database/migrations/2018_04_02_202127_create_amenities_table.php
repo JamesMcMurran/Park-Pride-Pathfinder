@@ -13,7 +13,7 @@ class CreateAmenitiesTable extends Migration
      */
     public function up()
     {
-        Schema::create('amenities', function (Blueprint $table) {
+        Schema::create('features', function (Blueprint $table) {
             $table->increments('id',true);
 	        $table->longText('description');
 	        $table->string('name', 255);
@@ -31,6 +31,6 @@ class CreateAmenitiesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('amenities');
+        Schema::dropIfExists('features');
     }
 }

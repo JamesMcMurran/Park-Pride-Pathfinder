@@ -14,26 +14,26 @@ class AddForeignKeys extends Migration
     public function up()
     {
         Schema::table('amenities_places', function (Blueprint $table) {
-	        //$table->foreign('amenities_id')->references('id')->on('amenities');
-	        //$table->foreign('places_id')->references('id')->on('places');
+	        $table->foreign('amenities_id')->references('id')->on('amenities');
+	        $table->foreign('place_id')->references('id')->on('places');
         });
 
-	    Schema::table('group_place', function (Blueprint $table) {
-		    //$table->foreign('group_id')->references('id')->on('groups');
-		    //$table->foreign('place_id')->references('id')->on('parks');
+	    Schema::table('groups_places', function (Blueprint $table) {
+		    $table->foreign('group_id')->references('id')->on('groups');
+		    $table->foreign('place_id')->references('id')->on('places');
 	    });
 
 	    Schema::table('groups_users', function (Blueprint $table) {
-		    //$table->foreign('group_id')->references('id')->on('groups');
-		    //$table->foreign('user_id')->references('id')->on('users');
+		    $table->foreign('group_id')->references('id')->on('groups');
+		    $table->foreign('user_id')->references('id')->on('users');
 	    });
 	    Schema::table('places_pictures', function (Blueprint $table) {
-		    //$table->foreign('place_id')->references('id')->on('places');
-		    //$table->foreign('picture_id')->references('id')->on('pictures');
+		    $table->foreign('place_id')->references('id')->on('places');
+		    $table->foreign('picture_id')->references('id')->on('pictures');
 	    });
 	    Schema::table('amenities_pictures', function (Blueprint $table) {
-		    //$table->foreign('amenities_id')->references('id')->on('amenities');
-		    // $table->foreign('picture_id')->references('id')->on('pictures');
+		    $table->foreign('amenities_id')->references('id')->on('amenities');
+		    $table->foreign('picture_id')->references('id')->on('pictures');
 	    });
     }
 
@@ -45,7 +45,8 @@ class AddForeignKeys extends Migration
     public function down()
     {
         Schema::table('amenities_places', function (Blueprint $table) {
-            //$table->dropForeign('posts_user_id_foreign');
+            $table->dropForeign('amenities_places_amenities_id_foreign');//groups_places_place_id_foreign
+	        $table->dropForeign('amenities_places_place_id_foreign');
         });
     }
 }
